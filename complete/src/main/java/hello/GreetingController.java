@@ -13,6 +13,8 @@ public class GreetingController {
 
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
+
+       if(true) throw new RuntimeException("run time mssg Test");
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
